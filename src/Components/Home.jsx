@@ -35,8 +35,9 @@ function Home(props) {
 
     const drawer = (
         <div>
-            <Toolbar style={{background:"#3A3845" }}>
-                <img style={{ width: "100px", height: "30px", margin: "auto"}} src="https://learn.masaischool.com/img/logo_big.png/" alt="logo" />
+            <Toolbar style={{ background: "#3A3845" }}>
+                <img style={{ width: "100px", height: "30px", margin: "auto" }}
+                    src="https://learn.masaischool.com/img/logo_big.png/" alt="logo" />
             </Toolbar>
             <Divider />
             <List>
@@ -75,7 +76,11 @@ function Home(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar sx={{ display: 'flex', background: "#3A3845", justifyContent:"space-between" }}>
+                <Toolbar sx={{
+                    display: 'flex',
+                    background: "#3A3845",
+                    justifyContent: "space-between"
+                }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -85,10 +90,10 @@ function Home(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography noWrap component="span">
                         IA Dashboard
                     </Typography>
-                    <Typography >
+                    <Typography component={'span'} variant={'body2'} >
                         <AttendanceButton />
                     </Typography>
                 </Toolbar>
@@ -125,12 +130,12 @@ function Home(props) {
                     {drawer}
                 </Drawer>
             </Box>
-            <Box style={{ position:"absolute", right:0}}>
+            <Box style={{ position: "absolute", right: 0 }}>
                 <Toolbar />
-                <Typography >
+                <Typography component={'span'} variant={'body2'}>
                     <LeaveListCard /><br />
                 </Typography>
-                <Typography >
+                <Typography component={'span'} variant={'body2'}>
                     <ActivePeopleCard />
                 </Typography>
             </Box>

@@ -4,6 +4,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function LeaveList() {
     const activedata = [{ name: "Souvik dutta", icon: <AccountCircleIcon />, mail: "souvik@gmail.com" },
@@ -23,22 +24,22 @@ export default function LeaveList() {
       subheader={<li />}
     >
       {[0].map((sectionId) => (
-        <li key={`section-${sectionId}`}>
+        <li key={uuidv4()}>
           <ul>
             <ListSubheader sx = {{fontSize:"16px",color:"black"}}>{`People on Leave`}</ListSubheader>
             {activedata.map((item) => (
-              <ListItem key={`item-${sectionId}-${item}`}>
+              <ListItem key={uuidv4()}>
                 <ListItemText primary={<>
-              <div style = {{display:"flex", margin:"10px", color:"#006778"}}>
-                <div>
+              <span style = {{display:"flex", margin:"10px", color:"#006778"}}>
+                <span>
                   <span>{item.icon}</span> &emsp;
-                </div>
-                <div>
+                </span>
+                <span>
                   <span>{item.name}</span><br />
                   <small>{item.mail}</small>
-                </div>
+                </span>
 
-              </div>
+              </span>
             </>} />
               </ListItem>
             ))}
